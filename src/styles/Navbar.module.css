@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #13042d;
+    height: 10vh;
+    border-radius: 2rem;
+  }
+  
+  .navbarTitle {
+    flex-grow: 1;
+    display: flex;
+    justify-content:center;
+  }
+  
+  .navbarTitle h1 {
+    font-family: 'Righteous';
+    color: #d7d5f3;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .navbarAbout{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right:10rem;
+    background-color:rgb(62, 20, 136);
+    border-radius: 2rem;
+  }
+
+  .navbarAbout a {
+    
+    font-family: 'Righteous';
+    color: #d7d5f3;
+    text-decoration: none;
+    font-size: 1rem;
+
+  }
+  
+  .navbarAbout a:hover {
+    color: #5471e4;
+    text-decoration: underline;
+  }
+  
