@@ -16,10 +16,7 @@ const Page = ({pdfFiles}) => {
     setFilesArray(files);
     setSelectedFile(files[0]);
   }, [location.state]);
-  // const pdfFiles = [
-  //   { name: 'Sample PDF 2', path: 'sample2.pdf' },
-  //   { name: 'KLTA.pdf', path: 'KLTA.pdf' },
-  // ];
+  
 
 
   return (

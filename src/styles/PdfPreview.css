@@ -31,7 +31,7 @@
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 88vh;
+    max-height: 85vh;
 }
 
 
@@ -43,6 +43,8 @@
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .file-item:hover {
@@ -113,3 +115,34 @@ canvas{
     background-color: transparent;
   }
   
+
+  .truncated-text-container {
+    position: relative;
+    display: inline-block;
+}
+
+.truncated-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* .truncated-text-container:hover .truncated-text::after {
+   display: none; 
+   content: attr(data-full-text);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: #818080;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: normal;
+    z-index: 3;
+
+}
+
+.truncated-text-container:hover .truncated-text::after {
+    display: block;
+} */

@@ -1,0 +1,219 @@
+.typing-text {
+    font-size: 2.5em;
+    font-family: 'Arial', sans-serif; 
+    color: #ff5733;
+    text-transform: uppercase;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .typing-text:hover {
+    color: #c70039; 
+  }
+
+  .app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0; 
+    padding: 20px;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  
+/* drag and drop styling*/
+.file-upload{
+    width: 60vw;
+    height: 35vh;
+    line-height: 2rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: 2px dashed #00006d;
+    background: rgba(0, 119, 194, 0.10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 2rem;
+    
+  }
+  
+  .smaller{
+    width : 20rem;
+    margin: 0;
+  }
+  
+  .middle-text-container{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .file-upload-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+  }
+  
+  .middle-text{
+    color: #424242;
+    font-family: Noto Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem; /* 150% */
+    margin-top: 8px;
+    margin-right: 3rem;
+  }
+  
+  
+  .file-input-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .choose-file-button {
+    width: 10.4375rem;
+    height: 2.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    border: 1px solid #0021dd;
+    background: #1c0cd1;
+    color: #FFF;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+    cursor: pointer;
+  }
+  
+  .validate{
+    background: whitesmoke;
+    color: #282388;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .validate:hover{
+    color: whitesmoke;
+  }
+  
+  .button-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 2rem;
+  
+  }
+  .table-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .addfiles-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2rem;
+    height: 50vh;
+  }
+  
+  .subcontainer1{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .subcontainer2{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+  } 
+  
+  .file-upload-button-container{
+    display: flex;
+    justify-content: end;
+    margin-top: 3vh;
+    height: -webkit-fill-available;
+    align-items: end;
+  }
+  
+  .subcontainer1 {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: rgb(203 235 255 / 10%);
+    /* max-width: 600px; */
+    margin-left: 5%;
+    /* margin: auto; */
+    font-family: Arial, sans-serif;
+  }
+  
+  .file-count {
+    margin-bottom: 2.5%;
+    font-size: 18px;
+    /* font-weight: bold; */
+    
+  }
+  
+  .file-list1 {
+    border-top: 0.5px solid #ddd;
+    padding-top: 10px;
+    overflow-x: auto;
+    min-height: 30vh;
+  }
+  
+  .file-item-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .file-item1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .file-item div {
+    flex: 1;
+  }
+  
+  .choose-file-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .bluetext{
+    color: #0033cc;  
+    display: inline-block;
+  }
+
+  .model-text{
+    margin-top: 1vh;
+  }

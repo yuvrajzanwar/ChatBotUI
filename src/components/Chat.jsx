@@ -24,59 +24,60 @@ const Chatbot = ({file}) => {
   };
 
   useEffect(() => {
-    if (!hasSentPresetQuery.current && isFileUploaded) {
+    if (!hasSentPresetQuery.current) {
       sendPresetQuery();
       console.log('sendPresetQuery')
       hasSentPresetQuery.current = true;
     }
-  }, [isFileUploaded]);
+  }, []);
 
-  useEffect(() => {
-    if (file) {
-      console.log('Uploading file', file)
-      uploadFile(file);
-    }
-  }, [file]);
+  // useEffect(() => {
+  //   if (file) {
+  //     console.log('Uploading file', file)
+  //     uploadFile(file);
+  //   }
+  // }, [file]);
 
-  const uploadFile = async (file) => {
-    setFileUploading(true);
-    const formData = new FormData();
-    formData.append('files', file);
+  // const uploadFile = async (file) => {
+  //   setFileUploading(true);
+  //   const formData = new FormData();
+  //   formData.append('files', file);
 
-    try {
-      const response = await fetch('http://localhost:8000/upload_files', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-        body: formData,
-      });
+  //   try {
+  //     const response = await fetch('http://localhost:8000/upload_files', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //       body: formData,
+  //     });
 
-      if (response.ok) {
-        setFileUploading(false);
-        setIsFileUploaded(true);
-      } else {
-        console.error('Error uploading file:', response.statusText);
-        setFileUploading(false);
-      }
-    } catch (error) {
-      console.error('Error uploading file:', error);
-      setFileUploading(false);
-    }
-  };
+  //     if (response.ok) {
+  //       setFileUploading(false);
+  //       setIsFileUploaded(true);
+  //     } else {
+  //       console.error('Error uploading file:', response.statusText);
+  //       setFileUploading(false);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error uploading file:', error);
+  //     setFileUploading(false);
+  //   }
+  // };
 
   const sendPresetQuery = async () => {
-    const response = await fetch('http://localhost:8000/chat', {
+    const response = await fetch('http://127.0.0.1:8000/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({question: 'What is title of the document in four words at maximum? Please summarize the document if you can. What are the the possible questions I can ask?'}),
+      body: JSON.stringify({question: 'What are the main topics of the documents in four words at maximum?What are the the possible questions I can ask about the document. Make sure to give only relavent infomation. DONT GIVE ANY ABSURD INFORMATION.'}),
     });
     const botMessage = await response.json();
+    setIsFileUploaded(true);
     setBotTyping(true);
     setIsArrowButtonLoading(true);
-    const firstResponse  = "Hello, I am your document assistant. I can help you with any questions you may have regarding " + botMessage.response + " Please feel free to ask me a question about the document.";
+    const firstResponse  = `Hello, I am your document assistant. I can help you with any questions you may have regarding the submited documents.<br/><br/> Possible queries could be about: ${botMessage.response}<br/><br/> Please feel free to ask me a question about the document.`;
     animateText(firstResponse);
   };
 
@@ -157,11 +158,11 @@ const Chatbot = ({file}) => {
     textarea.classList.toggle('expanded', textarea.scrollHeight > textarea.clientHeight);
   };
   
-
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
       handleSend();
-    }
+    } 
   };
 
   const handleCopy = (text) => {

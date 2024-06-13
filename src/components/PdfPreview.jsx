@@ -76,7 +76,13 @@ const PdfPreview = ({selectedFile, setSelectedFile, pdfFiles}) => {
               className={(selectedFile && selectedFile.name === file.name) ? 'file-item selected-file' : 'file-item'} 
               onClick={() => handleFileSelect(file)}
             >
-              <div className="file-item-text">{file.name}</div>
+              <div className="file-item-text">
+                <div class="truncated-text-container">
+                  <div class="truncated-text" data-full-text={file.name}>
+                  {file.name}
+                  </div>
+                </div>
+            </div>
             </div>
           ))}
         </div>
@@ -89,7 +95,7 @@ const PdfPreview = ({selectedFile, setSelectedFile, pdfFiles}) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         height: '80vh',
-                        width: '100%',
+                        width: '40vw',
                         fontSize: '30px',
                         color: '#4684ff',
                     } 
