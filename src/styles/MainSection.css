@@ -1,3 +1,12 @@
+body {
+  -webkit-user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; 
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .typing-text {
     font-size: 2.5em;
     font-family: 'Arial', sans-serif; 
@@ -143,7 +152,7 @@
     width: 65%;
     display: flex;
     flex-direction: column;
-    
+    justify-content: center;
   }
   
   .subcontainer2{
@@ -216,4 +225,26 @@
 
   .model-text{
     margin-top: 1vh;
+  }
+  .justify-center{
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .file-upload{
+      width: 75vw;
+      height: 45vh;
+      margin: 0 0;
+    }
+    .addfiles-container{
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+    .subcontainer1{
+      width: 85%;
+      margin-left: 0;
+    }
+    .subcontainer2{
+      width: 100%;
+    } 
   }

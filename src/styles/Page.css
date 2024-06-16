@@ -25,3 +25,17 @@
     display:flex;
     width: 40%;
 }
+
+@media(max-width : 768px){
+    .container{
+        height: 92vh;
+        padding: 0;
+        margin: 0;
+    }
+    .file-viewer{
+        display: none;
+    }
+    .chatbot-container{
+        width: 95%;
+    }
+}

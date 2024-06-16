@@ -237,7 +237,7 @@
     }
 
     .input-area {
-      flex-direction: column;
+      flex-direction: row;
       align-items: stretch;
     }
   
@@ -249,5 +249,8 @@
     .input-area button {
       width: 100%;
       border-radius: 10px;
+    }
+    .loadmsg-text{
+      font-size: 1.2em;
     }
   }

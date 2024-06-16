@@ -48,12 +48,21 @@ const HeaderContainer = styled.header`
   padding: 0 50px;
   height : 14vh;
   background-color: white;
+
+  @media (max-width: 768px){
+    padding : 0 20px;
+    height: 12vh;
+  }
 `;
 
 const Logo = styled.div`
   font-size: 2.3em;
-//font-weight: bold;
+  //font-weight: bold;
   color: #0d0d0d;
+
+    @media (max-width: 768px) {
+    font-size: 1.9em;
+  }
 
 `;
 
@@ -69,6 +78,12 @@ const AboutButton = styled.button`
     background-color: #3700ff;
     animation : ${rotate} 1s infinite alternate;
   }
+
+
+  @media (max-width: 768px) {
+    padding: 10px 18px;
+    font-size: 0.9em;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -78,6 +93,11 @@ const MainContainer = styled.div`
   padding: 1vh 2vw 5vh 8vw;
   background-color: #f7f7f7;
   height: 80vh;
+
+  @media (max-width : 768px){
+    flex-direction: column;
+    height:60vh;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -85,22 +105,50 @@ const TextContainer = styled.div`
   flex-direction: column;
   max-width: 60vw;
   margin-top:18vh;
+
+  @media (max-width : 768px){
+    margin-top:5vh;
+    max-width:90%;
+  }
 `;
 
 const Title = styled.div`
+  height:9vh;
   font-size: 9vh;
   color: #0d0d0d;
+  @media(max-width:768px){
+      font-size:5vh;
+      height:5vh;
+  }
 `;
 
 const Subtitle = styled.div`
   font-size: 9vh;
   color: #0033cc;
+  @media(max-width:768px){
+      font-size:5vh;
+  }
 `;
 
-const Description = styled.p`
+const DescriptionDesktop = styled.p`
   font-size: 3vh;
   color: #262626;
-  margin-bottom : 7vh;
+  margin-bottom: 7vh;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const DescriptionMobile = styled.p`
+  display: none;
+  font-size: 2.5vh;
+  color: #262626;
+  margin-bottom: 4vh;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const CallToAction = styled.div`
@@ -127,6 +175,7 @@ const Button = styled.button`
       &:hover .profile-images {
     animation: ${rotate} 0.5s infinite alternate;
   }
+
 `;
 
 const ProfileImages = styled.div`
@@ -352,6 +401,7 @@ const Modal = ({ title, onClose,files, setFiles, handleUpload }) => {
                 <div className='subcontainer2'>
                   <div 
                     className='file-upload-container'
+                    style={{marginTop : '10%', marginBottom:'10%'}}
                     onDragEnter={handleDragIn}
                     onDragLeave={handleDragOut}
                     onDragOver={handleDragIn}
@@ -457,9 +507,12 @@ const MainSection = () => {
       </TextContainer>
       
       <ImageContainer>
-        <Description>
+        <DescriptionDesktop>
         Experience the unparalleled convenience and power of interacting with your documents. Whether you're a professional, student, or researcher, our platform boosts productivity and simplifies document management. Choose from <div className='bluetext'>Bimodular AI</div> options for a customized, efficient, and fun document interaction experience.
-        </Description>
+        </DescriptionDesktop>
+        <DescriptionMobile>
+        Experience the unparalleled convenience and power of interacting with your documents. Choose from <div className='bluetext'>Bimodular AI</div> options for a customized, efficient, and fun document interaction experience.
+        </DescriptionMobile>
         <CallToAction>
           <Button onClick={openModal}>
           <Text>Upload Files</Text>

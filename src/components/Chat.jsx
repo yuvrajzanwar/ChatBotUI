@@ -97,7 +97,7 @@ const Chatbot = ({file}) => {
       setMessages([...messages, userMessage]);
       setInput('');
 
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch('http://127.0.0.1:8000/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ const Chatbot = ({file}) => {
   useEffect(() => {
     const handleScroll = () => {
       if (chatWindowRef.current) {
-        const threshold = 10;
+        const threshold = 2;
         const { scrollTop, scrollHeight, clientHeight } = chatWindowRef.current;
         const isAtBottom = scrollHeight - scrollTop <= clientHeight + threshold;
         console.log('isAtBottom', isAtBottom)
