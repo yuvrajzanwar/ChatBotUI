@@ -57,9 +57,10 @@ const HeaderContainer = styled.header`
 
 const Logo = styled.div`
   font-size: 2.3em;
-  //font-weight: bold;
-  color: #0d0d0d;
-
+  // color: #0d0d0d;
+  font-weight: bold;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
     @media (max-width: 768px) {
     font-size: 1.9em;
   }

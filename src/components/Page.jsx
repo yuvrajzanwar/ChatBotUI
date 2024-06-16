@@ -2,16 +2,20 @@ import React,{useState, useEffect} from 'react'
 import Chat from './Chat'
 import PdfPreview from './PdfPreview'
 import '../styles/Page.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation , useNavigate} from 'react-router-dom'
 
 const Page = ({pdfFiles}) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = React.useState(null);
   const [file, setFile] = useState(null);
   const [filesArray, setFilesArray] = useState([]);
 
   useEffect(() => {
-    if (!location.state) return;
+    if (!location.state) 
+    {navigate('/');
+    return;
+    }
     const files = location.state.pdfFiles;
     setFilesArray(files);
     setSelectedFile(files[0]);

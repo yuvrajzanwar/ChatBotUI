@@ -7,7 +7,6 @@ const Chatbot = ({file}) => {
   const [botTyping, setBotTyping] = useState(false);
   const [animatedText, setAnimatedText] = useState('');
   const [isArrowButtonLoading, setIsArrowButtonLoading] = useState(false);
-  const [fileUploading, setFileUploading] = useState(false);
   const [isFileUploaded, setIsFileUploaded] = useState(false);
   const chatWindowRef = useRef(null);
   const arrowButtonRef = useRef(null);
@@ -24,6 +23,7 @@ const Chatbot = ({file}) => {
   };
 
   useEffect(() => {
+    if(file)
     if (!hasSentPresetQuery.current) {
       sendPresetQuery();
       console.log('sendPresetQuery')
@@ -251,17 +251,7 @@ const Chatbot = ({file}) => {
           
         </div>
       </>
-      ) : (fileUploading ? 
-        (
-        <>
-          <div className="loading-message">
-            <img src='scanningdoc.gif' className='sun'/>
-            <div className='loadmsg-text'>Executing document...</div>
-          </div>
-        </>
-        )
-        :
-        (
+      ) : (
         <>
           <div className="loading-message">
             <img src='chatbot.jpeg' className='sun'/>
@@ -269,7 +259,6 @@ const Chatbot = ({file}) => {
             <div className='loadmsg-text'>Select a file to get started.</div>
           </div>
         </>
-        )
       )
     }
     </div>
